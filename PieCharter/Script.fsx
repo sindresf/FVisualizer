@@ -3,6 +3,17 @@
 
 #load "Library1.fs"
 open PieCharter
+open System
 
-// Define your library scripting code here
+let convertDataRow(csvLine:string) =
+    let cells = List.ofSeq(csvLine.Split(','))
+    match cells with
+    | title::number::_ -> 
+        let parsedNumber = Int32.Parse(number)
+        (title, parsedNumber)
+    | _ -> failwith "Incorrect data format!"
+
+convertDataRow("Testing reading,1234")
+
+convertDataRow("Testing reading, 1234") //works with leading whitespace
 
