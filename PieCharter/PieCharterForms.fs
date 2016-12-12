@@ -21,7 +21,6 @@ let boxChart =
 mainForm.Controls.Add(menu)
 mainForm.Controls.Add(boxChart)
 
-// TODO: Drawing of the chart & user interface interactions
 let rnd = new Random()
 let randomBrush() = 
     let r,g,b = rnd.Next(256), rnd.Next(256), rnd.Next(256)
